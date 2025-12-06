@@ -37,8 +37,8 @@ class ProductDetail(models.Model):
     Reviews = RichTextUploadingField(null=True)
     productDetailDate = models.DateTimeField (auto_now_add=True, null=True)
     def __str__(self):         
-        return self.productDetailName
-    
+     
+       return f'{self.id} - {self. productDetailName} - {self. productID.productName}'
 
 class ProductDetailImage(models.Model):
     productDetailImageName = models.CharField(max_length=200, null=True)
@@ -46,4 +46,4 @@ class ProductDetailImage(models.Model):
     productDetailImage = models.ImageField(upload_to='images/productDetail/',null=True,blank=True)
     imageDate = models.DateTimeField(auto_now_add=True, null=True)
     def __str__(self):         
-        return self.productDetailImageName
+           return f'{self.id} - {self. productDetailImageName} - {self. productID.productName}'
